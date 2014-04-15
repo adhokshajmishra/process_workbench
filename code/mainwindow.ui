@@ -14,13 +14,13 @@
    <string>Process Analyzer</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListWidget" name="lstProcess">
+   <widget class="QTableView" name="tableProcesses">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
-      <width>241</width>
-      <height>541</height>
+      <width>801</width>
+      <height>531</height>
      </rect>
     </property>
    </widget>
@@ -31,7 +31,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Process">

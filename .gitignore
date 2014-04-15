@@ -11,3 +11,9 @@
 *.lai
 *.la
 *.a
+
+# Build directories
+build*
+
+# Qt, user related settings:
+*.user.*
