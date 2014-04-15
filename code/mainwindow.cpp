@@ -29,6 +29,15 @@ void MainWindow::__setup_process_list()
     m_process_model.setHorizontalHeaderItem(0, new QStandardItem(QString("PID")));
     m_process_model.setHorizontalHeaderItem(1, new QStandardItem(QString("Started as")));
 
+    //Set the selection mode to an entire row, only one row
+    //can be selected at the same time and rows are not editiable
+    ui->tableProcesses->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableProcesses->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableProcesses->setSelectionMode(QAbstractItemView::SingleSelection);
+
+    //The last column should resize to maximum
+    ui->tableProcesses->horizontalHeader()->setStretchLastSection(true);
+
     //Set the model into the table
     ui->tableProcesses->setModel(&m_process_model);
 }
