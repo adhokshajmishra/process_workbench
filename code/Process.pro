@@ -11,12 +11,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Process
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         mainwindow.cpp \
-    process.cpp
+    process.cpp \
+    process_collection.cpp
 
 HEADERS  += mainwindow.h \
-    process.h
+    process.h \
+    process_collection.h
 
 FORMS    += mainwindow.ui
