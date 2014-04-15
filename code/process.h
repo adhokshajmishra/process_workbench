@@ -11,6 +11,8 @@ namespace pw
 /*!
  * \brief Represents a process on the current system.
  *
+ * \note More information on Linux's /proc can be found in the kernel documentation: https://www.kernel.org/doc/Documentation/filesystems/proc.txt
+ *
  * \author Swen Kooij
  */
 class process

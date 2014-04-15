@@ -33,12 +33,11 @@ process_collection process_collection::get_all()
         if(pids[i].length() <= 0)
             continue;
 
-        //Horrible check, but the only alternative is std::stoi just lazy..
-        if(!pids[i][0].isDigit())
-            continue;
+        //Attempt to convert the string to an integer
+        bool conversion_success = false;
+        int current_pid = pids[i].toInt(&conversion_success);
 
-        int current_pid = pids[i].toInt();
-        if(current_pid <= 0)
+        if(current_pid <= 0 || !conversion_success)
             continue;
 
         //Initialize a new instance of the process class with this pid
