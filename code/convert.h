@@ -24,11 +24,22 @@ public:
      */
     static std::string to_string(size_t value);
 
+    /*!
+     * \brief Attempts to convert the specified string value to an integer.
+     *
+     * \param value     The string to attempt to convert to an integer.
+     * \param def       The value to return when the conversion failed.
+     *
+     * \return The specified string value, as an integer, or the specified
+     *         default value when conversion failed.
+     */
+    static int to_int(const std::string &value, int def = -1);
+
 private:
     //This is a static utility class, no construction is allowed.
     convert() {}
 };
 
-// namespace pw
+} // namespace pw
 
 #endif // PW_CONVERT_H

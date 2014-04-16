@@ -1,8 +1,7 @@
 #include "process.h"
 #include "convert.h"
-
-#include <QFile>
-#include <QByteArray>
+#include "stringutils.h"
+#include "fileutils.h"
 
 namespace pw
 {
@@ -24,22 +23,13 @@ std::string process::pid_str()
 
 std::string process::started_as()
 {
-    QFile cmdline_file(__build_cmd_line());
-    if(!cmdline_file.exists())
-        return "";
-
-    if(!cmdline_file.open(QIODevice::ReadOnly))
-        return "";
-
-    QByteArray contents_raw = cmdline_file.readAll();
-    QString contents(contents_raw);
-
+    std::string contents = fileutils::read_file_all(__build_cmd_line());
     return contents;
 }
 
 std::string process::__build_cmd_line()
 {
-    return QString("/proc/%1/cmdline").arg(m_pid);
+    return stringutils::format("/proc/%zu/cmdline", m_pid);
 }
 
 } // namespace pw

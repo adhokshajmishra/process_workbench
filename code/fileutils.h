@@ -58,6 +58,35 @@ public:
      */
     static std::string combine_path(const std::string &base_path, const std::string &append);
 
+    /*!
+     * \brief Gets a collection of all directories in the specified directory.
+     *
+     * \param dir_path The path to get all directories from.
+     *
+     * \return A vector of strings, where each item, is the name of a directory
+     *         within the specified directory. An empty vector is returned
+     *         when the specified directory did not exists.
+     */
+    static string_vector get_dir_dirs(const std::string &dir_path);
+
+    /*!
+     * \brief Checks if the specified path is a directory.
+     *
+     * \param path The path to check of whether it's a directory.
+     *
+     * \return A boolean indicating whether the specified path is a directory.
+     */
+    static bool is_directory(const std::string &path);
+
+    /*!
+     * \brief Checks if the specified path is a file.
+     *
+     * \param path The path to check of whether it's a file.
+     *
+     * \return A boolean indicating whether the specified path is a file.
+     */
+    static bool is_file(const std::string &path);
+
 private:
     //Explicit private constructor to prevent construction.
     fileutils() {}

@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     process.cpp \
     process_collection.cpp \
     convert.cpp \
-    fileutils.cpp
+    fileutils.cpp \
+    stringutils.cpp
 
 HEADERS  += mainwindow.h \
     process.h \
@@ -24,11 +25,12 @@ HEADERS  += mainwindow.h \
     error_codes.h \
     convert.h \
     fileutils.h \
-    types.h
+    types.h \
+    stringutils.h
 
 FORMS    += mainwindow.ui
 
-unix:!macx: LIBS += -L$$PWD/../../../../../usr/lib/ -lboost_regex
+unix:!macx: LIBS += -L$$PWD/../../../../../usr/lib/ -lboost_system -lboost_regex -lboost_filesystem
 
 INCLUDEPATH += $$PWD/../../../../../usr/include
 DEPENDPATH += $$PWD/../../../../../usr/include

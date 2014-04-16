@@ -57,8 +57,8 @@ void MainWindow::__refresh_process_list()
 
         //Build up a row with two columns
         QList<QStandardItem*> column_fields;
-        column_fields.append(new QStandardItem(QString(current_proc->pid_str())));
-        column_fields.append(new QStandardItem(QString(current_proc->started_as())));
+        column_fields.append(new QStandardItem(QString(current_proc->pid_str().c_str())));
+        column_fields.append(new QStandardItem(QString(current_proc->started_as().c_str())));
 
         //Append the row
         m_process_model.appendRow(column_fields);
