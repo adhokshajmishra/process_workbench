@@ -15,13 +15,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     process.cpp \
     process_collection.cpp \
-    process_information.cpp
+    convert.cpp \
+    fileutils.cpp
 
 HEADERS  += mainwindow.h \
     process.h \
     process_collection.h \
-    process_information.h \
-    error_codes.h
+    error_codes.h \
+    convert.h \
+    fileutils.h \
+    types.h
 
 FORMS    += mainwindow.ui
 
