@@ -47,7 +47,7 @@ process_collection process_collection::get_all()
     process_vector processes;
 
     //Iterate over the processes...
-    for(int i = 0; i < pids.size(); ++i)
+    for(size_t i = 0; i < pids.size(); ++i)
     {
         //If the current name is not a digit, then it's not a pid
         if(pids[i].size() <= 0)
