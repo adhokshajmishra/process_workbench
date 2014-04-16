@@ -24,6 +24,7 @@ protected:
 public:
     process_information(const int &pid);
     int call_stack(QStringList &stack);
+    int loaded_modules(QStringList &modules);
 };
 }
 
