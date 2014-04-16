@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef PW_MAINWINDOW_H
+#define PW_MAINWINDOW_H
 
 #include <QMainWindow>
 #include <QStandardItemModel>
@@ -49,4 +49,4 @@ private:
     QStandardItemModel m_process_model;
 };
 
-#endif // MAINWINDOW_H
+#endif // PW_MAINWINDOW_H

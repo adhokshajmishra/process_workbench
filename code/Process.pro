@@ -17,18 +17,20 @@ SOURCES += main.cpp\
     process_collection.cpp \
     convert.cpp \
     fileutils.cpp \
-    stringutils.cpp
+    stringutils.cpp \
+    process_window.cpp
 
 HEADERS  += mainwindow.h \
     process.h \
     process_collection.h \
-    error_codes.h \
     convert.h \
     fileutils.h \
     types.h \
-    stringutils.h
+    stringutils.h \
+    process_window.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    process_window.ui
 
 unix:!macx: LIBS += -L$$PWD/../../../../../usr/lib/ -lboost_system -lboost_regex -lboost_filesystem
 
