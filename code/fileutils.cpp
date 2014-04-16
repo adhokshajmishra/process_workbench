@@ -74,7 +74,7 @@ string_vector fileutils::get_dir_dirs(const std::string &dir_path)
             continue;
 
         return_vector.push_back(
-            dir_it->path().string()
+            dir_it->path().leaf().string()
         );
     }
 
