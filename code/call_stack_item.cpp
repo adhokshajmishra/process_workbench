@@ -58,4 +58,14 @@ call_stack_item_ptr call_stack_item::parse(const std::string &proc_stack_line)
     return call_stack_item_ptr(new call_stack_item(address, function));
 }
 
+std::string call_stack_item::address()
+{
+    return m_address;
+}
+
+std::string call_stack_item::function()
+{
+    return m_function;
+}
+
 } // namespace pw

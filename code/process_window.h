@@ -2,6 +2,9 @@
 #define PW_PROCESS_WINDOW_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QList>
 
 #include "process.h"
 
@@ -45,12 +48,21 @@ private:
      //Updates the title of this window with the current pid, and start path.
      void __update_window_title();
 
+     //Updates the call stack for the current process.
+     void __update_callstack();
+
+     //Prepares the list view of the callstack for a refresh
+     void __setup_callstack_table();
+
 private:
     //Provides access to the components within this window.
     Ui::process_window *ui;
 
     //The underlying process that this window is displaying.
     pw::process_ptr m_process;
+
+    //Model for the list view of call stack items
+    QStandardItemModel m_callstack_model;
 };
 
 #endif // PW_PROCESS_WINDOW_H

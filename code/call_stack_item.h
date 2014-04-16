@@ -45,6 +45,20 @@ public:
      */
     static call_stack_item_ptr parse(const std::string &proc_stack_line);
 
+    /*!
+     * \brief Gets the memory address of this call.
+     *
+     * \return The memory address of this call.
+     */
+    std::string address();
+
+    /*!
+     * \brief Gets the function name of this call.
+     *
+     * \return The function name of this call.
+     */
+    std::string function();
+
 private:
     //The address of this call.l
     std::string m_address;

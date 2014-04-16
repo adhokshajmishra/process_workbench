@@ -62,33 +62,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QTableWidget" name="tableCallstack">
-          <property name="maximumSize">
-           <size>
-            <width>999999</width>
-            <height>999999</height>
-           </size>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SingleSelection</enum>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <property name="columnCount">
-           <number>2</number>
-          </property>
-          <column>
-           <property name="text">
-            <string>Address</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Function</string>
-           </property>
-          </column>
-         </widget>
+         <widget class="QTableView" name="tableCallstack"/>
         </item>
        </layout>
       </widget>
@@ -102,7 +76,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>29</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
