@@ -74,7 +74,7 @@ int process_information::loaded_modules(QStringList &modules)
 
     while (getline(file, line))
     {
-        regex module_regex("[.period.]so$ | [.period.]so[.period.] ");
+        regex module_regex("\\.(so)");
 
         match_results<std::string::const_iterator> result;
 
