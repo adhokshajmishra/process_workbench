@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     convert.cpp \
     fileutils.cpp \
     stringutils.cpp \
-    process_window.cpp
+    process_window.cpp \
+    call_stack_item.cpp
 
 HEADERS  += mainwindow.h \
     process.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     fileutils.h \
     types.h \
     stringutils.h \
-    process_window.h
+    process_window.h \
+    call_stack_item.h
 
 FORMS    += mainwindow.ui \
     process_window.ui

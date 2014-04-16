@@ -1,13 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "process_window.h"
 
 #include "process.h"
-#include "process_collection.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow         (parent),
     ui                  (new Ui::MainWindow),
-    m_process_model     (0, 2) // no rows, two columns
+    m_process_model     (0, 2), // no rows, two columns
+    m_processes         ()
 {
     ui->setupUi(this);
 
@@ -48,12 +49,12 @@ void MainWindow::__refresh_process_list()
     __setup_process_list();
 
     //Get all processes..
-    pw::process_collection procs = pw::process_collection::get_all();
+    m_processes = pw::process_collection::get_all();
 
-    for(size_t i = 0; i < procs.count(); ++i)
+    for(size_t i = 0; i < m_processes.count(); ++i)
     {
         //Get the current process
-        pw::process_ptr current_proc = procs.get_at(i);
+        pw::process_ptr current_proc = m_processes.get_at(i);
 
         //Build up a row with two columns
         QList<QStandardItem*> column_fields;
@@ -68,4 +69,20 @@ void MainWindow::__refresh_process_list()
 void MainWindow::on_action_Refresh_triggered()
 {
     __refresh_process_list();
+}
+
+void MainWindow::on_tableProcesses_doubleClicked(const QModelIndex &index)
+{
+    //Grab the shared pointer to the process that was clicked
+    pw::process_ptr clicked_proc = m_processes.get_at(index.row());
+    if(!clicked_proc)
+        return;
+
+    //Create a new instance of the detail window for a process and pass
+    //along the clicked process pointer instance
+    process_window *new_window = new process_window;
+    new_window->set_process(clicked_proc);
+
+    //Show the new window
+    new_window->show();
 }

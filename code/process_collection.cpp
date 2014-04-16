@@ -8,6 +8,11 @@
 namespace pw
 {
 
+process_collection::process_collection() :
+    m_processes()
+{
+}
+
 process_collection::process_collection(process_vector &processes) :
     m_processes(processes)
 {

@@ -22,6 +22,20 @@ class process_collection
 {
 public:
     /*!
+     * \brief Initializes a new instance of the process_collection class.
+     */
+    process_collection();
+
+    /*!
+     * \brief Initializes a new instance of the process_collection instance.
+     *
+     * \param processes A vector of process class instances to initialize this instance with.
+     *
+     * \note Explictly marked private, initialization may only happen by public static methods.
+     */
+    process_collection(process_vector &processes);
+
+    /*!
      * \brief Gets all processes that are currently running on this system.
      *
      * \return An instance of the process_collection class, containing references
@@ -45,16 +59,6 @@ public:
      *         shared pointer is returned upon failure.
      */
     process_ptr get_at(size_t index) const;
-
-private:
-    /*!
-     * \brief Initializes a new instance of the process_collection instance.
-     *
-     * \param processes A vector of process class instances to initialize this instance with.
-     *
-     * \note Explictly marked private, initialization may only happen by public static methods.
-     */
-    process_collection(process_vector &processes);
 
 private:
     //Holds all processes that we currently have loaded.

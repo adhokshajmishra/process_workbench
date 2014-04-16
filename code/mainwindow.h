@@ -6,7 +6,10 @@
 #include <QStandardItem>
 #include <QList>
 
-namespace Ui {
+#include "process_collection.h"
+
+namespace Ui
+{
 class MainWindow;
 }
 
@@ -41,12 +44,18 @@ private slots:
     //Fired when the refresh button is clicked.
     void on_action_Refresh_triggered();
 
+    //Fire when an item in the list of processes is double clicked.
+    void on_tableProcesses_doubleClicked(const QModelIndex &index);
+
 private:
     //Pointer to an instance of this, holds all of happy components
     Ui::MainWindow *ui;
 
     //Model for the list view of processes..
     QStandardItemModel m_process_model;
+
+    //Underlying collection of processes...
+    pw::process_collection m_processes;
 };
 
 #endif // PW_MAINWINDOW_H
