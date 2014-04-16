@@ -2,8 +2,8 @@
 #define PW_CALL_STACK_ITEM_H
 
 #include <string>
-#include <boost/shared_ptr.hpp>>
-
+#include <boost/shared_ptr.hpp>
+#include <vector>
 namespace pw
 {
 
@@ -57,6 +57,11 @@ private:
  * \brief A shared pointer to an instance of the call_stack_item class.
  */
 typedef boost::shared_ptr<call_stack_item> call_stack_item_ptr;
+
+/*!
+ * \brief A vector of shared pointers to call_stack_item class instances.
+ */
+typedef std::vector<call_stack_item_ptr> call_stack;
 
 } // namespace pw
 

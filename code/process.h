@@ -5,6 +5,8 @@
 #include <boost/shared_ptr.hpp>
 #include <string>
 
+#include "call_stack_item.h"
+
 namespace pw
 {
 
@@ -45,6 +47,14 @@ public:
      * \return The command that made the process start.
      */
     std::string started_as();
+
+    /*!
+     * \brief Gets the current call stack of this process.
+     *
+     * \return A vector of shared pointers to instances of the call_stack_item
+     *         class. Representing the current call stack of this process.
+     */
+    call_stack callstack();
 
 private:
     //Builds the path the cmdline file for this process.
