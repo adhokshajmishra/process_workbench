@@ -17,3 +17,4 @@ build*
 
 # Qt, user related settings:
 *.user.*
+*.md~
