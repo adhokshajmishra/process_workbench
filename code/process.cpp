@@ -1,4 +1,5 @@
 #include "process.h"
+#include "convert.h"
 
 #include <QFile>
 #include <QByteArray>
@@ -16,12 +17,12 @@ size_t process::pid()
     return m_pid;
 }
 
-QString process::pid_str()
+std::string process::pid_str()
 {
-    return QString("%1").arg(m_pid);
+    return convert::to_string(m_pid);
 }
 
-QString process::started_as()
+std::string process::started_as()
 {
     QFile cmdline_file(__build_cmd_line());
     if(!cmdline_file.exists())
@@ -36,7 +37,7 @@ QString process::started_as()
     return contents;
 }
 
-QString process::__build_cmd_line()
+std::string process::__build_cmd_line()
 {
     return QString("/proc/%1/cmdline").arg(m_pid);
 }

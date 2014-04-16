@@ -1,8 +1,5 @@
 #include "process_collection.h"
 
-#include <QDirIterator>
-#include <QStringList>
-#include <QDir>
 #include <cctype>
 
 namespace pw

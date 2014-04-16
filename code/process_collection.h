@@ -1,14 +1,17 @@
-#ifndef PROCESS_COLLECTION_H
-#define PROCESS_COLLECTION_H
-
-#include <QVector>
+#ifndef PW_PROCESS_COLLECTION_H
+#define PW_PROCESS_COLLECTION_H
 
 #include "process.h"
+
+#include <vector>
 
 namespace pw
 {
 
-typedef QVector<process_ptr> process_vector;
+/*!
+ * \brief A vector of shared pointers to a process class instance.
+ */
+typedef std::vector<process_ptr> process_vector;
 
 /*!
  * \brief Represents a collection of processes, this is some kind of container for process classes.
@@ -60,4 +63,4 @@ private:
 
 } // namespace pw
 
-#endif // PROCESS_COLLECTION_H
+#endif // PW_PROCESS_COLLECTION_H

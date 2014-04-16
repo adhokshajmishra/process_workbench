@@ -1,9 +1,9 @@
-#ifndef PROCESS_H
-#define PROCESS_H
+#ifndef PW_PROCESS_H
+#define PW_PROCESS_H
 
 #include <stdlib.h>
 #include <boost/shared_ptr.hpp>
-#include <QString>
+#include <string>
 
 namespace pw
 {
@@ -37,18 +37,18 @@ public:
      *
      * \return The unique identifier of this process as a string.
      */
-    QString pid_str();
+    std::string pid_str();
 
     /*!
      * \brief Gets the command that made the process start.
      *
      * \return The command that made the process start.
      */
-    QString started_as();
+    std::string started_as();
 
 private:
     //Builds the path the cmdline file for this process.
-    QString __build_cmd_line();
+    std::string __build_cmd_line();
 
 private:
     //The unique process identifier.
@@ -62,4 +62,4 @@ typedef boost::shared_ptr<process> process_ptr;
 
 } // namespace pw
 
-#endif // PROCESS_H
+#endif // PW_PROCESS_H
