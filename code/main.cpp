@@ -20,10 +20,33 @@
 
 #include "mainwindow.h"
 #include <QApplication>
+#include <QMessageBox>
+
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    if (getuid())
+    {
+        QMessageBox mbox;
+        mbox.setText("Root privilege required!");
+        mbox.setInformativeText("This tool requires root access to report internal details"
+                                " (like stack traces, memory maps, modules etc.)"
+                                "\n\n Basic process details don't require root access.");
+
+        mbox.setStandardButtons(QMessageBox::Abort | QMessageBox::Ignore);
+        mbox.setDefaultButton(QMessageBox::Ignore);
+
+        int ret = mbox.exec();
+
+        if (ret == QMessageBox::Abort)
+        {
+            exit(-1);
+        }
+    }
+
     MainWindow w;
     w.show();
 
