@@ -29,7 +29,8 @@ HEADERS  += mainwindow.h \
     types.h \
     stringutils.h \
     process_window.h \
-    call_stack_item.h
+    call_stack_item.h \
+    module_list_item.h
 
 FORMS    += mainwindow.ui \
     process_window.ui
