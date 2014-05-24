@@ -71,6 +71,9 @@ private:
      //Updates the call stack for the current process.
      void __update_callstack();
 
+     //Updates the process status
+     void __update_process_status();
+
      //Prepares the list view of the callstack for a refresh
      void __setup_callstack_table();
 

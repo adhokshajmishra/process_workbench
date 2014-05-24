@@ -26,6 +26,7 @@
 #include <string>
 
 #include "call_stack_item.h"
+#include "process_status.h"
 
 namespace pw
 {
@@ -75,6 +76,7 @@ public:
      *         class. Representing the current call stack of this process.
      */
     call_stack callstack();
+    process_status GetProcessStatus();
 
 private:
     //Builds the path the cmdline file for this process.

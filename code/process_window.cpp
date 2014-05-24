@@ -24,6 +24,9 @@
 #include "ui_process_window.h"
 #include "stringutils.h"
 #include "call_stack_item.h"
+#include "process_status.h"
+
+#include <QString>
 
 process_window::process_window(QWidget *parent) :
     QMainWindow     (parent),
@@ -46,6 +49,7 @@ void process_window::set_process(pw::process_ptr proc)
     //Update the window title accordingly
     __update_window_title();
     __update_callstack();
+    __update_process_status();
 }
 
 void process_window::__setup_callstack_table()
@@ -97,6 +101,22 @@ void process_window::__update_callstack()
 
     //Resize the left column to fit the contents in
     ui->tableCallstack->resizeColumnToContents(0);
+}
+
+void process_window::__update_process_status()
+{
+    pw::process_status stat;
+    stat = m_process->GetProcessStatus();
+
+    std::string str;
+
+    for (size_t i = 0; i < stat.size(); ++i)
+    {
+        str.append(stat[i]);
+        str.append("\n");
+    }
+    //ui->lblProcessStatus->setText(QString(str.c_str()));
+    ui->txtProcessStatus->appendPlainText(QString(str.c_str()));
 }
 
 void process_window::__update_window_title()

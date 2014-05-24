@@ -24,7 +24,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -63,6 +63,25 @@
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QTableView" name="tableCallstack"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabProcessStatus">
+       <attribute name="title">
+        <string>Process Status</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QPlainTextEdit" name="txtProcessStatus">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+           </font>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

@@ -22,6 +22,7 @@
 #include "convert.h"
 #include "stringutils.h"
 #include "fileutils.h"
+#include "process_status.h"
 
 namespace pw
 {
@@ -45,6 +46,13 @@ std::string process::started_as()
 {
     std::string contents = fileutils::read_file_all(__build_cmd_line());
     return contents;
+}
+
+process_status process::GetProcessStatus()
+{
+    //
+    ProcessStatus p(this->m_pid);
+    return p.GetProcessStatus();
 }
 
 call_stack process::callstack()
